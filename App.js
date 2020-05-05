@@ -3,18 +3,19 @@ import { StyleSheet, View, Text, TouchableWithoutFeedback, Keyboard } from 'reac
 
 import LoginScreen from './screens/LoginScreen';
 import Card from './components/Card';
+import StocksDisplayScreen from './screens/StocksDisplayScreen';
 
 const App = () => {
   return (
-    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <View>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>Welcome</Text>
-        </View>
-        <LoginScreen />
-      </View>
-    </TouchableWithoutFeedback>
-
+    // <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+    //   <View>
+    //     <View style={styles.header}>
+    //       <Text style={styles.headerText}>Welcome</Text>
+    //     </View>
+    //     <LoginScreen />
+    //   </View>
+    // </TouchableWithoutFeedback>
+    <StocksDisplayScreen />
   );
 };
 

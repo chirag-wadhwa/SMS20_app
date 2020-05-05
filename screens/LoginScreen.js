@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 import GooglSigninButton from '../GoogleSignin';
 
-
 import Card from '../components/Card';
 
 const LoginScreen = (props) => {
@@ -28,18 +27,20 @@ const LoginScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     width: '100%',
     height: '88%',
+    paddingTop: '10%',
   },
   loginCard: {
     width: '85%',
-    height: '85%',
+    height: '70%',
   },
   input: {
     borderWidth: 1,
     borderColor: 'black',
     height: 40,
+    paddingHorizontal: 10,
   },
   text: {
     fontFamily: 'Oxygen-Light',
