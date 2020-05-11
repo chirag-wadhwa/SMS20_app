@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, Button } from 'react-native';
 
 import { STOCKS } from '../data/dummy-data';
 
-const StocksDisplayScreen = props => {
+function StocksDisplayScreen({navigation}){
 
     // const list = STOCKS.map(item =>
     //     <View key={item.name} >
@@ -16,10 +16,12 @@ const StocksDisplayScreen = props => {
                 <Text style={styles.title}>Stocks</Text>
             </View>
                 {STOCKS.map(item =>
-                    <View key={item.name} style={styles.container} >
+                    <View key={item.name} style={styles.container}  >
                         <Text style={styles.name}>{item.name}</Text>
                         <Text style={styles.price}>{item.price}</Text>
-                        <Button title="Buy" />
+                        <Button title="Buy" onPress={() => {
+                        navigation.navigate('StockData', {  id: item.id, name: item.name, price: item.price });
+                    }}/>
                     </View>)}
         </ScrollView>
         // <View>

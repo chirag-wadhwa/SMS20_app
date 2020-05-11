@@ -4,41 +4,21 @@ import { StyleSheet, View, Text, TouchableWithoutFeedback, Keyboard } from 'reac
 import LoginScreen from './screens/LoginScreen';
 import Card from './components/Card';
 import StocksDisplayScreen from './screens/StocksDisplayScreen';
+import StockData from './screens/StockData';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    // <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-    //   <View>
-    //     <View style={styles.header}>
-    //       <Text style={styles.headerText}>Welcome</Text>
-    //     </View>
-    //     <LoginScreen />
-    //   </View>
-    // </TouchableWithoutFeedback>
-    <StocksDisplayScreen />
-  );
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="AllStocks" component={StocksDisplayScreen} />
+        <Stack.Screen name="StockData" component={StockData} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 };
-
-const styles = StyleSheet.create({
-  headerText: {
-    fontFamily: 'Oxygen-Regular',
-    fontSize: 25,
-  },
-  header: {
-    width: '100%',
-    height: '12%',
-    backgroundColor: '#14EEE9',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  cardContainer: {
-    alignItems: 'center',
-    marginTop: 50,
-  },
-  headerCard: {
-    width: '80%',
-    alignItems: 'center',
-  },
-});
 
 export default App;
